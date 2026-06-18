@@ -1,0 +1,206 @@
+{
+  "rubrics": [
+    {
+      "questionId": 1,
+      "question": "Soal 1: Pembuatan Class 'Hero', Properti (nama, role), Method 'getInfo', & Instansiasi Dasar",
+      "criteria": [
+        {
+          "name": "Pemahaman Konsep & Alur Logika",
+          "weight": 50,
+          "descriptors": {
+            "excellent": "Memahami dengan tepat perbedaan antara cetak biru (class) dan perwujudan objek. Alur pemanggilan properti internal menggunakan instansiasi sangat logis.",
+            "good": "Memahami class sebagai wadah objek. Logika pemanggilan properti masuk akal, namun ada sedikit kebingungan dalam alur instansiasi.",
+            "satisfactory": "Mengetahui bentuk dasar class, namun logika pembuatan objek baru masih keliru atau dikerjakan dengan gaya prosedural biasa.",
+            "poor": "Pemahaman tentang abstraksi class sangat terbatas, tidak terlihat adanya pemisahan antara wadah dan isi.",
+            "failing": "Tidak menunjukkan pemahaman konsep dasar objek atau jawaban di luar konteks."
+          }
+        },
+        {
+          "name": "Penerapan Struktur & Keyword PBO",
+          "weight": 30,
+          "descriptors": {
+            "excellent": "Menggunakan keyword 'class', 'public', '$this->', dan 'new' pada tempat dan hierarki yang tepat.",
+            "good": "Mayoritas keyword PBO digunakan, namun ada 1-2 kesalahan penempatan (misal lupa 'new' atau '$this').",
+            "satisfactory": "Berupaya menuliskan keyword PBO ('class' atau 'public'), namun strukturnya masih tumpang tindih.",
+            "poor": "Sangat minim menggunakan keyword PBO, fungsi hanya ditulis seadanya tanpa struktur kelas.",
+            "failing": "Tidak ada satupun struktur atau keyword PBO yang digunakan."
+          }
+        },
+        {
+          "name": "Validitas Sintaks PHP Native",
+          "weight": 20,
+          "descriptors": {
+            "excellent": "Penulisan sintaks rapi, penggunaan tanda '$', penutup kurung '{}', dan titik koma (;) konsisten dan akurat.",
+            "good": "Terdapat sedikit typo atau error tanda baca, namun struktur blok PHP masih bisa diidentifikasi dengan jelas.",
+            "satisfactory": "Banyak fatal error pada penulisan kurung dan variabel, namun niat eksekusi kodenya masih terbaca.",
+            "poor": "Sintaks berantakan, terpotong-potong, atau tidak menggunakan aturan penulisan string yang benar.",
+            "failing": "Bukan berupa sintaks pemrograman sama sekali."
+          }
+        }
+      ]
+    },
+    {
+      "questionId": 2,
+      "question": "Soal 2: Implementasi Inheritance & Overriding (Parent 'Hero', Child 'Mage' & 'Fighter', override method 'useSkill')",
+      "criteria": [
+        {
+          "name": "Pemahaman Konsep & Alur Logika",
+          "weight": 50,
+          "descriptors": {
+            "excellent": "Mampu merancang hierarki pewarisan (parent-child) dengan benar dan logis dalam melakukan overriding untuk membedakan output Mana/Energy.",
+            "good": "Paham konsep pewarisan, namun logika pembedaan aksi (overriding) pada child class masih kurang terstruktur dengan baik.",
+            "satisfactory": "Menyadari harus ada class induk dan anak, namun gagal mengimplementasikan pewarisan sifat secara fungsional.",
+            "poor": "Hanya membuat beberapa class terpisah tanpa ada upaya menggabungkannya dalam logika pewarisan.",
+            "failing": "Tidak ada pemahaman terkait inheritance dan overriding."
+          }
+        },
+        {
+          "name": "Penerapan Struktur & Keyword PBO",
+          "weight": 30,
+          "descriptors": {
+            "excellent": "Keyword 'extends' digunakan dengan tepat sasaran untuk menghubungkan child ke parent class.",
+            "good": "Menggunakan keyword 'extends', namun penempatannya keliru (misal: malah mewarisi method, bukan class).",
+            "satisfactory": "Mengetahui adanya class, tapi sama sekali lupa atau gagal menyematkan keyword pewarisan.",
+            "poor": "Keyword PBO dicampuradukkan (menggunakan implements/interface padahal instruksinya pewarisan).",
+            "failing": "Tidak ada struktur pewarisan yang diaplikasikan."
+          }
+        },
+        {
+          "name": "Validitas Sintaks PHP Native",
+          "weight": 20,
+          "descriptors": {
+            "excellent": "Sintaks deklarasi fungsi, kurung buka-tutup class, dan argumen tertulis dengan aturan PHP yang benar.",
+            "good": "Penulisan fungsi cukup jelas meskipun ada beberapa typo pada variabel parameter.",
+            "satisfactory": "Sintaks bertumpuk dan tidak ditutup dengan benar, namun instruksi echo masih terlihat.",
+            "poor": "Penulisan parameter fungsi kacau, deklarasi awal variabel tidak valid di PHP.",
+            "failing": "Sintaks tidak bisa diidentifikasi sebagai instruksi PHP."
+          }
+        }
+      ]
+    },
+    {
+      "questionId": 3,
+      "question": "Soal 3: Encapsulation & Validasi Nilai Kondisional (Method setter 'setHP' dengan validasi IF/ELSE)",
+      "criteria": [
+        {
+          "name": "Pemahaman Konsep & Alur Logika",
+          "weight": 50,
+          "descriptors": {
+            "excellent": "Alur pengkondisian (IF/ELSE) sangat logis: mampu memvalidasi parameter jika kurang dari 0 maka diubah menjadi 0.",
+            "good": "Memiliki alur pengecekan batas nilai, namun penyelesaian kondisinya belum tuntas (misal ELSE-nya salah mengarahkan nilai).",
+            "satisfactory": "Memahami perlunya logika pengecekan IF, namun kondisinya sama sekali tidak memecahkan masalah HP minus.",
+            "poor": "Logika kondisional membingungkan, atau hanya melakukan assignment tanpa validasi apapun.",
+            "failing": "Tidak ada alur pengecekan nilai sama sekali."
+          }
+        },
+        {
+          "name": "Penerapan Struktur & Keyword PBO",
+          "weight": 30,
+          "descriptors": {
+            "excellent": "Menggunakan access modifier 'private' untuk keamanan dan menampung parameter dengan benar di method setter.",
+            "good": "Menerapkan metode setter dengan parameter, namun lupa men-setting properti asli menjadi private.",
+            "satisfactory": "Mencoba membuat method untuk HP, namun gagal menggunakan struktur parameter setter yang dinamis.",
+            "poor": "Sekadar menulis blok logika IF di ruang hampa tanpa dibungkus ke dalam method setter PBO.",
+            "failing": "Tidak menerapkan struktur enkapsulasi sama sekali."
+          }
+        },
+        {
+          "name": "Validitas Sintaks PHP Native",
+          "weight": 20,
+          "descriptors": {
+            "excellent": "Penulisan operator perbandingan (< 0) dan operator penugasan (=) berjalan sesuai logika native PHP.",
+            "good": "Terdapat sedikit error pada tanda kurung IF atau typo pada simbol $.",
+            "satisfactory": "Penulisan assignment rusak (seperti $this->$hp=$hp), namun instruksi pembanding masih terbaca polanya.",
+            "poor": "Sintaks kondisional hancur, tidak beraturan, dan tidak membentuk percabangan yang valid.",
+            "failing": "Sintaks percabangan PHP tidak dikenali."
+          }
+        }
+      ]
+    },
+    {
+      "questionId": 4,
+      "question": "Soal 4: Penerapan Kontrak Kerja Objek (Interface 'UltimateSkill' di 2 Class Hero berbeda)",
+      "criteria": [
+        {
+          "name": "Pemahaman Konsep & Alur Logika",
+          "weight": 50,
+          "descriptors": {
+            "excellent": "Memahami sepenuhnya fungsi interface sebagai kontrak, serta mampu membedakan reaksi jurus pada dua class karakter yang berbeda.",
+            "good": "Mengerti bahwa harus ada 2 objek dengan implementasi berbeda, namun alur penghubungannya ke interface kurang tepat.",
+            "satisfactory": "Membuat fungsi jurus yang bervariasi, tapi digabung dalam satu class tanpa memahami pemisahan implementasi objek.",
+            "poor": "Gagal menangkap konsep kontrak pemaksa, hanya membuat fungsi statis sembarangan.",
+            "failing": "Tidak memahami instruksi penggunaan antarmuka (interface) sama sekali."
+          }
+        },
+        {
+          "name": "Penerapan Struktur & Keyword PBO",
+          "weight": 30,
+          "descriptors": {
+            "excellent": "Mendeklarasikan 'interface' secara terpisah dan class pendukung menggunakan keyword 'implements'.",
+            "good": "Menyertakan keyword 'interface' dan 'implements', namun struktur deklarasinya terbalik atau digabungkan dalam class.",
+            "satisfactory": "Mencantumkan keyword 'interface' tapi lupa/tidak diimplementasikan oleh class manapun.",
+            "poor": "Tidak menggunakan interface, hanya menggunakan format class dan function biasa.",
+            "failing": "Tidak ada satupun struktur interface yang diterapkan."
+          }
+        },
+        {
+          "name": "Validitas Sintaks PHP Native",
+          "weight": 20,
+          "descriptors": {
+            "excellent": "Penamaan method mematuhi aturan standar string tanpa spasi, pembukaan dan penutupan class sangat jelas.",
+            "good": "Terdapat spasi pada nama method atau kesalahan kutip string, tetapi blok kodenya relatif terdefinisi.",
+            "satisfactory": "Banyak spasi salah dan kurung tumpang tindih, namun instruksi untuk echo jurus masih bisa dilacak.",
+            "poor": "Sintaks pemanggilan nama dan class sangat fatal sehingga sulit ditebak baris pembatasnya.",
+            "failing": "Kode sama sekali tidak menyerupai struktur PHP."
+          }
+        }
+      ]
+    },
+    {
+      "questionId": 5,
+      "question": "Soal 5: Efisiensi Obyek Melalui Magic Method (__construct dinamis melalui argumen)",
+      "criteria": [
+        {
+          "name": "Pemahaman Konsep & Alur Logika",
+          "weight": 50,
+          "descriptors": {
+            "excellent": "Memahami esensi konstruktor: menangkap parameter dari luar untuk langsung diisikan ke properti objek saat pertama kali diciptakan.",
+            "good": "Tahu bahwa fungsi ini berjalan otomatis, namun logika pengisiannya masih bersifat hardcode (tidak dinamis dari argumen parameter).",
+            "satisfactory": "Memahami butuh fungsi awalan, namun penempatan eksekusinya salah (contoh: dihentikan oleh return sebelum assignment selesai).",
+            "poor": "Logika sama sekali tidak mengarah ke inisialisasi properti, hanya memunculkan echo/return teks biasa.",
+            "failing": "Tidak ada pemahaman mengenai mekanisme inisialisasi awal pada objek."
+          }
+        },
+        {
+          "name": "Penerapan Struktur & Keyword PBO",
+          "weight": 30,
+          "descriptors": {
+            "excellent": "Menggunakan format khusus magic method '__construct' lengkap dengan penampung argumen di parameternya.",
+            "good": "Mencoba membuat method construct, namun ada typo pada penamaan dasar (misal kurang underscore).",
+            "satisfactory": "Hanya membuat method biasa dengan harapan berfungsi sebagai konstruktor.",
+            "poor": "Lupa mendeklarasikan fungsi sepenuhnya, langsung melakukan assignment tanpa wadah.",
+            "failing": "Tidak menggunakan struktur function/method sama sekali."
+          }
+        },
+        {
+          "name": "Validitas Sintaks PHP Native",
+          "weight": 20,
+          "descriptors": {
+            "excellent": "Sintaks pengisian nilai ($this->nama = $nama;) valid dan instruksinya berjalan runtut ke bawah tanpa interupsi blocking code.",
+            "good": "Terdapat sedikit kesalahan pada penggunaan tag atau titik penyambung string, namun penugasan variabel terlihat.",
+            "satisfactory": "Urutan sintaks fatal akibat mispersepsi penempatan kurung atau perintah return yang prematur.",
+            "poor": "Sintaks hancur, deklarasi properti dan variabel bercampur tanpa aturan.",
+            "failing": "Bukan sintaks kode PHP."
+          }
+        }
+      ]
+    }
+  ],
+  "scoringScale": {
+    "excellent": 100,
+    "good": 90,
+    "satisfactory": 80,
+    "poor": 70,
+    "failing": 50
+  }
+}
