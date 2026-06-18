@@ -86,9 +86,10 @@ class GradingUtils {
       },
       guidance: [
         'Nilai jawaban berdasarkan kecocokan dengan soal yang sedang tampil.',
-        'Jika soal berubah jauh dari konteks sebelumnya, gunakan rubric baru yang lebih sesuai.',
+        'Jika soal berubah jauh dari konteks sebelumnya, buatkan dan gunakan rubric baru yang lebih sesuai.',
         'Kosong tetap 0.',
         'Jawaban tidak relevan tetap berada di band rendah.',
+        'Jawaban yang mengandung Keyword dari soal tetapi tidak menjawab inti soal berada di band sedang ke tinggi asalkan relevan.',
         'Jawaban yang menjawab inti soal dengan baik berada di band tinggi.'
       ]
     };
@@ -177,7 +178,7 @@ class GradingUtils {
    */
   static calculateStatistics(results) {
     const successResults = results.filter(r => r.status === 'success');
-    
+
     if (successResults.length === 0) {
       return null;
     }
@@ -186,7 +187,7 @@ class GradingUtils {
     const sum = scores.reduce((a, b) => a + b, 0);
     const avg = sum / scores.length;
     const sorted = scores.sort((a, b) => a - b);
-    const median = sorted.length % 2 === 0 
+    const median = sorted.length % 2 === 0
       ? (sorted[sorted.length / 2 - 1] + sorted[sorted.length / 2]) / 2
       : sorted[Math.floor(sorted.length / 2)];
 
@@ -237,7 +238,7 @@ class GradingUtils {
 
       const timestamp = new Date().toISOString().replace(/:/g, '-');
       const backupPath = path.join(backupDir, `backup-${timestamp}.json`);
-      
+
       fs.writeFileSync(backupPath, JSON.stringify(data, null, 2));
       logger.info(`Backup created: ${backupPath}`);
       return backupPath;
@@ -272,8 +273,8 @@ class GradingUtils {
     ];
 
     if (placeholders.includes(String(config.MOODLE_URL).trim()) ||
-        placeholders.includes(String(config.MOODLE_USERNAME).trim()) ||
-        placeholders.includes(String(config.MOODLE_PASSWORD).trim())) {
+      placeholders.includes(String(config.MOODLE_USERNAME).trim()) ||
+      placeholders.includes(String(config.MOODLE_PASSWORD).trim())) {
       throw new Error('Moodle config still contains placeholder values. Update MOODLE_URL, MOODLE_USERNAME, and MOODLE_PASSWORD in .env.');
     }
 
@@ -323,7 +324,7 @@ class GradingUtils {
    */
   static async retry(fn, maxRetries = 3, initialDelay = 1000) {
     let lastError;
-    
+
     for (let i = 0; i < maxRetries; i++) {
       try {
         return await fn();
@@ -336,7 +337,7 @@ class GradingUtils {
         }
       }
     }
-    
+
     throw lastError;
   }
 

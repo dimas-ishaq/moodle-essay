@@ -8,10 +8,10 @@ class EssayEvaluator {
     const config = typeof apiKeyOrConfig === 'object' && apiKeyOrConfig !== null
       ? apiKeyOrConfig
       : {
-          OPENAI_API_KEY: apiKeyOrConfig,
-          OPENAI_MODEL: model,
-          OPENAI_BASE_URL: baseURL
-        };
+        OPENAI_API_KEY: apiKeyOrConfig,
+        OPENAI_MODEL: model,
+        OPENAI_BASE_URL: baseURL
+      };
 
     const clientOptions = { apiKey: config.OPENAI_API_KEY };
     if (config.OPENAI_BASE_URL && String(config.OPENAI_BASE_URL).trim()) {

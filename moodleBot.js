@@ -12,7 +12,7 @@ class MoodleBot {
     try {
       logger.info('Launching browser...');
       this.browser = await puppeteer.launch({
-        headless: true,
+        headless: "new",
         args: [
           '--no-sandbox',
           '--disable-setuid-sandbox',
