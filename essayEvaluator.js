@@ -87,12 +87,17 @@ SKALA NILAI YANG DIINGINKAN
 
 Pakai rentang nilai berikut sebagai acuan utama:
 
-- 6 = jawaban paling rendah yang masih ada isi, tetapi sangat lemah / hampir tidak tepat
-- 8 = jawaban sedang, cukup relevan, ada pemahaman sebagian, namun belum lengkap
-- 10 = jawaban cukup bagus, sudah kuat, lengkap di banyak bagian, tetapi masih ada kekurangan kecil
+- 7 = jawaban paling rendah yang masih ada isi, tetapi sangat lemah / hampir tidak tepat
+- 8 = jawaban yang masih sedikit sekali relevan, masih ada jejak pemahaman
+- 9 = jawaban yang mulai relevan, ada arah jawaban yang benar, tetapi belum lengkap
+- 10-11 = jawaban cukup bagus, sudah kuat, lengkap di banyak bagian, tetapi masih ada kekurangan kecil
 - 12 = jawaban bagus / sangat bagus, sangat tepat, lengkap, jelas, dan hampir tanpa kekurangan
 
-Jika perlu, gunakan nilai desimal agar lebih akurat, misalnya 6.5, 7.5, 8.7, 9.3, 10.5, 11.5.
+Jika perlu, gunakan nilai desimal agar lebih akurat, misalnya 7.5, 8.5, 9.5, 10.5, 11.5.
+
+Jika jawaban menunjukkan niat menjawab yang benar, alur pikir yang masuk akal, atau alternatif jawaban yang benar secara makna, naikkan nilai secara wajar meskipun istilah atau formatnya tidak sama dengan kunci.
+
+Jika jawaban masih samar tetapi jelas berusaha menjawab soal, pilih skor yang mencerminkan kemajuan pemahaman, bukan hanya kekurangannya.
 
 PRINSIP PENILAIAN
 
@@ -134,11 +139,11 @@ PRINSIP PENILAIAN
 
 14. Nilai 12 hanya untuk jawaban yang benar-benar sangat tepat, lengkap, jelas, dan hampir tanpa kekurangan.
 
-15. Nilai 10 hanya jika jawaban sudah cukup bagus dan hampir lengkap.
+15. Nilai 10-11 hanya jika jawaban sudah cukup bagus dan hampir lengkap.
 
-16. Nilai 8 untuk jawaban sedang yang cukup relevan tetapi masih belum lengkap.
+16. Nilai 8-9 untuk jawaban yang masih sedikit sekali relevan, ada usaha memahami soal, tetapi masih belum lengkap.
 
-17. Nilai 6 untuk jawaban paling rendah yang masih ada isi tetapi sangat lemah.
+17. Nilai 6-7 untuk jawaban yang masih nyambung sedikit atau tidak nyambung sama sekali, tetapi masih ada jejak isi yang sangat lemah.
 
 18. Jika jawaban terisi, relevan, dan menunjukkan usaha memahami soal, jangan terlalu pelit menaikkan nilai.
 
@@ -151,6 +156,26 @@ PRINSIP PENILAIAN
 22. Jika dua jawaban sama-sama benar, jawaban yang lebih lengkap dan lebih panjang boleh mendapat nilai sedikit lebih tinggi.
 
 23. Jangan terlalu konservatif saat jawaban sudah menunjukkan pemahaman yang jelas.
+
+24. Jika jawaban tidak memakai istilah yang sama dengan kunci, tetapi alur pikirnya benar, niat jawabannya tepat, dan masih nyambung dengan konsep soal, naikkan nilai secara wajar.
+
+25. Jika jawaban masih lemah tetapi sudah menunjukkan arah berpikir yang benar, beri apresiasi nilai kecil agar tidak terlalu rendah.
+
+26. Jika jawaban alternatif benar secara makna meskipun berbeda contoh atau susunan kalimat, perlakukan sebagai jawaban yang layak naik nilai.
+
+27. Jika jawaban masih separuh benar atau sebagian besar arahnya benar, prioritaskan menaikkan nilai ke band yang lebih masuk akal daripada menahannya terlalu rendah.
+
+28. Jika jawaban salah istilah tetapi inti penjelasannya sejalan dengan konsep yang ditanya, anggap itu sebagai jawaban yang masih layak dihargai.
+
+29. Jika jawaban memiliki alasan yang koheren meskipun belum lengkap, berikan nilai lebih tinggi dari sekadar jawaban yang hanya menebak tanpa arah.
+
+30. Untuk jawaban yang masih samar tetapi jelas berusaha menjawab soal, gunakan pendekatan liberal: pilih skor yang mencerminkan kemajuan pemahaman, bukan hanya kekurangannya.
+
+24. Jika jawaban tidak memakai istilah yang sama dengan kunci, tetapi alur pikirnya benar, niat jawabannya tepat, dan masih nyambung dengan konsep soal, naikkan nilai secara wajar.
+
+25. Jika jawaban masih lemah tetapi sudah menunjukkan arah berpikir yang benar, beri apresiasi nilai kecil agar tidak terlalu rendah.
+
+26. Jika jawaban alternatif benar secara makna meskipun berbeda contoh atau susunan kalimat, perlakukan sebagai jawaban yang layak naik nilai.
 
 PROSES PENILAIAN
 
@@ -176,8 +201,8 @@ PANDUAN UMUM SKOR
 
 * Kosong → ${emptyScore}
 * Tidak menjawab pertanyaan → sangat rendah
-* Sedikit relevan → rendah
-* Sebagian konsep benar → sedang
+* Sedikit relevan tetapi masih nyambung → rendah ke sedang
+* Sebagian konsep benar atau ada arah jawaban yang masuk akal → sedang
 * Mayoritas konsep benar → tinggi
 * Sangat tepat dan lengkap → maksimal`;
 
@@ -208,6 +233,8 @@ Komentar harus:
 * Menjelaskan kelebihan jawaban
 * Menunjukkan bagian yang perlu diperbaiki
 * Memberikan motivasi untuk belajar lebih baik
+* Mengakui jika jawaban sudah benar sebagian atau sudah punya arah yang tepat
+* Tidak melebih-lebihkan kekurangan jika jawaban masih tetap nyambung secara konsep
 
 ATURAN OUTPUT
 
@@ -218,6 +245,12 @@ Balas HANYA dalam format JSON ini:
   "strengths": ["<kekuatan 1>", "<kekuatan 2>"],
   "improvements": ["<area perbaikan 1>", "<area perbaikan 2>"]
 }
+
+PANDUAN PENILAIAN TAMBAHAN
+
+* Jika jawaban sudah menunjukkan arah yang benar, komentar harus menyebutkan kemajuan itu.
+* Jika jawaban masih separuh benar, komentar harus tetap memberi apresiasi, bukan hanya kritik.
+* Jika jawaban alternatif benar secara makna, perlakukan sebagai jawaban yang layak dihargai.
 
 MATA_PELAJARAN: ${subject}
 FASE: ${phase}
