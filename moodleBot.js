@@ -21,15 +21,15 @@ class MoodleBot {
         ]
       });
       this.page = await this.browser.newPage();
-      
+
       // Set user agent untuk menghindari blocking
       await this.page.setUserAgent(
         'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
       );
-      
+
       // Set viewport
       await this.page.setViewport({ width: 1280, height: 720 });
-      
+
       logger.info('Browser launched successfully');
     } catch (error) {
       logger.error('Failed to launch browser:', error);
@@ -140,7 +140,9 @@ class MoodleBot {
     try {
       logger.info(`Fetching quiz attempts from course ${courseId}, quiz ${quizId}`);
 
-      const attemptsUrl = `${this.config.MOODLE_URL}/mod/quiz/report.php?id=${quizId}&mode=overview`;
+      const groupId = String(this.config.GROUP_ID || '').trim();
+      const groupQuery = groupId ? `&group=${encodeURIComponent(groupId)}` : '';
+      const attemptsUrl = `${this.config.MOODLE_URL}/mod/quiz/report.php?id=${quizId}&mode=overview${groupQuery}`;
       await this.page.goto(attemptsUrl, {
         waitUntil: 'networkidle2',
         timeout: 30000

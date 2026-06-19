@@ -87,13 +87,13 @@ SKALA NILAI YANG DIINGINKAN
 
 Pakai rentang nilai berikut sebagai acuan utama:
 
-- 7 = jawaban paling rendah yang masih ada isi, tetapi sangat lemah / hampir tidak tepat
-- 8 = jawaban yang masih sedikit sekali relevan, masih ada jejak pemahaman
-- 9 = jawaban yang mulai relevan, ada arah jawaban yang benar, tetapi belum lengkap
+- 6-7 = jawaban paling buruk, masih sangat lemah, hampir tidak tepat, atau hanya sedikit sekali nyambung
+- 8 = jawaban yang mulai menunjukkan usaha menjawab, ada sedikit relevansi, atau ada jejak pemahaman yang jelas
+- 9 = jawaban yang cukup relevan dan mulai mengarah ke inti soal, tetapi belum lengkap
 - 10-11 = jawaban cukup bagus, sudah kuat, lengkap di banyak bagian, tetapi masih ada kekurangan kecil
 - 12 = jawaban bagus / sangat bagus, sangat tepat, lengkap, jelas, dan hampir tanpa kekurangan
 
-Jika perlu, gunakan nilai desimal agar lebih akurat, misalnya 7.5, 8.5, 9.5, 10.5, 11.5.
+Jika perlu, gunakan nilai desimal agar lebih akurat, misalnya 6.5, 7.5, 8.5, 9.5, 10.5, 11.5.
 
 Jika jawaban menunjukkan niat menjawab yang benar, alur pikir yang masuk akal, atau alternatif jawaban yang benar secara makna, naikkan nilai secara wajar meskipun istilah atau formatnya tidak sama dengan kunci.
 
@@ -141,9 +141,9 @@ PRINSIP PENILAIAN
 
 15. Nilai 10-11 hanya jika jawaban sudah cukup bagus dan hampir lengkap.
 
-16. Nilai 8-9 untuk jawaban yang masih sedikit sekali relevan, ada usaha memahami soal, tetapi masih belum lengkap.
+16. Nilai 8-9 untuk jawaban yang sudah mulai relevan, ada usaha memahami soal, dan menunjukkan jejak pemahaman yang jelas.
 
-17. Nilai 6-7 untuk jawaban yang masih nyambung sedikit atau tidak nyambung sama sekali, tetapi masih ada jejak isi yang sangat lemah.
+17. Nilai 6-7 untuk jawaban yang sangat lemah, hanya sedikit nyambung, atau masih sangat jauh dari inti soal.
 
 18. Jika jawaban terisi, relevan, dan menunjukkan usaha memahami soal, jangan terlalu pelit menaikkan nilai.
 
@@ -170,12 +170,6 @@ PRINSIP PENILAIAN
 29. Jika jawaban memiliki alasan yang koheren meskipun belum lengkap, berikan nilai lebih tinggi dari sekadar jawaban yang hanya menebak tanpa arah.
 
 30. Untuk jawaban yang masih samar tetapi jelas berusaha menjawab soal, gunakan pendekatan liberal: pilih skor yang mencerminkan kemajuan pemahaman, bukan hanya kekurangannya.
-
-24. Jika jawaban tidak memakai istilah yang sama dengan kunci, tetapi alur pikirnya benar, niat jawabannya tepat, dan masih nyambung dengan konsep soal, naikkan nilai secara wajar.
-
-25. Jika jawaban masih lemah tetapi sudah menunjukkan arah berpikir yang benar, beri apresiasi nilai kecil agar tidak terlalu rendah.
-
-26. Jika jawaban alternatif benar secara makna meskipun berbeda contoh atau susunan kalimat, perlakukan sebagai jawaban yang layak naik nilai.
 
 PROSES PENILAIAN
 
@@ -269,10 +263,10 @@ JENIS_SOAL: ${questionType}`;
       logger.info(`Essay evaluated: score=${emptyScore} (empty answer)`);
       return {
         score: emptyScore,
-        comment: 'Jawaban kosong',
-        reasoning: 'Jawaban kosong',
+        comment: '',
+        reasoning: '',
         strengths: [],
-        improvements: ['Jawaban masih kosong, isi terlebih dahulu sesuai soal.']
+        improvements: []
       };
     }
 
