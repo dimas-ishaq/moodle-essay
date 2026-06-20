@@ -48,7 +48,7 @@ class GradingOrchestrator {
       const regradeThreshold = Number.isFinite(this.config.REGRADE_THRESHOLD) ? this.config.REGRADE_THRESHOLD : 40;
       const isUngradedSubmission = (submission) => {
         const status = String(submission?.status || '').toLowerCase();
-        return status.includes('belum dinilai') || status.includes('not graded');
+        return status.includes('belum dinilai') || status.includes('not yet graded');
       };
       const attemptScoreSummary = submissions.map(item => ({
         attemptId: item.attemptId,
@@ -228,9 +228,9 @@ class GradingOrchestrator {
       const successCount = this.gradeResults.filter(r => r.status === 'success').length;
       const failedCount = this.gradeResults.filter(r => r.status === 'failed').length;
       const successResults = this.gradeResults.filter(r => r.status === 'success');
-        const avgScore = successResults.length > 0
-          ? (successResults.reduce((sum, r) => sum + r.score, 0) / successResults.length).toFixed(2)
-          : '0.00';
+      const avgScore = successResults.length > 0
+        ? (successResults.reduce((sum, r) => sum + r.score, 0) / successResults.length).toFixed(2)
+        : '0.00';
 
       const report = {
         summary: {

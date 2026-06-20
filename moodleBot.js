@@ -188,7 +188,7 @@ class MoodleBot {
             const rowScore = rowScores.length > 0 ? rowScores[rowScores.length - 1] : NaN;
             const currentScore = Number.isFinite(rowScore) ? rowScore : anchorScore;
             const statusText = linkText || 'Ungraded';
-            const isUngraded = /belum dinilai|not graded/i.test(statusText);
+            const isUngraded = /belum dinilai|Not yet graded/i.test(statusText);
             const eligibleForRegrade = allowRegrade
               ? Number.isFinite(currentScore) && Number.isFinite(threshold) && currentScore < threshold
               : isUngraded;
